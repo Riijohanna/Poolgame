@@ -3,10 +3,10 @@
 
 var ball;
 var balls = [];
-var colors = ["white", "#3333cc", "#f30505", "#3333cc", "#f30505",
+var colors = ["#f30505", "#3333cc", "#f30505", "#3333cc", "#f30505",
   "#f30505", "#3333cc", "#3333cc", "#f30505", "#3333cc", "black", "#3333cc",
   "#f30505",
-  "#f30505", "yellow",
+  "#f30505", "#3333cc",
 ];
 
 
@@ -28,7 +28,7 @@ function setup() {
 
   let offset = 0;
   let c = 0;
-  let ballR = 18; // RADIUS OF BALLS
+  let ballR = 18; // RADIUS OF BALLS 18
   //generate balls in triangle
   for (var i = 0; i < 5; i++) { // VERTICAL LINES
     for (var j = 5 - i; j > 0; j--) { //HORIZONTAL LINES
@@ -36,6 +36,7 @@ function setup() {
       balls.push(b);
       c++;
 			console.log(balls[11]); //Black COLOR BALL
+
     }
     offset += ballR / 2 + 1;
 
@@ -73,14 +74,14 @@ function draw() {
 
 			if (balls[11].inHole ) {
             if (balls[1].inHole & balls[2].inHole & balls[3].inHole & balls[4].inHole & balls[5].inHole & balls[6].inHole & balls[7].inHole & balls[8].inHole & balls[9].inHole & balls[10].inHole & balls[12].inHole & balls[13].inHole & balls[14].inHole & balls[15].inHole) {
-              document.getElementById("notificationText").innerHTML = "U win";
+              document.getElementById("notificationText").innerHTML = "U win! Good job! Well DOne!!!!!!11111";
             } else {
-              document.getElementById("notificationText").innerHTML = "Game is gonna be restarted in awhile";
+              document.getElementById("notificationText").innerHTML = "You lost! Game is gonna be restarted in awhile";
               setTimeout(function() {
-                location.reload();
+                location.reload(); //---REFRESH IFRAME PAGE IN % SEC TO PLAY NEW GAME--------------
               }, 5000);
 
-              console.log("GAME OVER!!!!!!!!!!!!!!");
+
             break; // after BLACK BALL IN HOLE, U CANT PUT OTHER BALL IN HOLES
             }
 			}
@@ -132,7 +133,7 @@ class Hole {
   }
 
   static get radius() {
-    return 50; // RAIDUS OF HOLES
+    return 50; // RAIDUS OF HOLES 50
   }
 
   render() {

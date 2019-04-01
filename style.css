@@ -2,6 +2,7 @@ body {
 
 }
 iframe {
+  background-color: yellow;
   display: block;
   width: 620px;
   height: 400px;
@@ -10,4 +11,3 @@ iframe {
 p {
   border: 0;
   margin: 0;
-}
