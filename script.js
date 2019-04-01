@@ -74,7 +74,10 @@ function draw() {
                                         // IF THE BLACK BALL IS THE LAST ONE THEN U WIN THE GAME
 				    //}                          //location.reload(); // WHEN BLACK BALL IN HOLE, REFRESH PAGE
 
-        document.getElementById("status").innerHTML = "U LOST";
+        //document.getElementById("status").innerHTML = "U LOST";
+        setTimeout(function() {
+          location.reload();
+        }, 3000);
 
 				console.log("GAME OVER!!!!!!!!!!!!!!");
 				break; // after BLACK BALL IN HOLE, U CANT PUT OTHER BALL IN HOLES
