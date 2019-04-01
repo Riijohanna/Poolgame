@@ -1,6 +1,6 @@
 
 // add comments where source code was taken and it was changed by me
-
+let bg;
 var ball;
 var balls = [];
 var colors = ["#f30505", "#3333cc", "#f30505", "#3333cc", "#f30505",
@@ -23,7 +23,9 @@ function setup() {
 
 
   cnv.parent('sketch-holder'); // PLACE HOLDER FOR CANVAS
-  ball = new WhiteBall(width - 100, height / 2, 20, 45);
+  bg = loadImage('bg.jpg');  // TEST
+
+  ball = new WhiteBall(width - 100, height / 2, 20, 45); // 20 IS THE RADUIS OF A WHITE BALL
   balls.push(ball);
 
   let offset = 0;
@@ -53,7 +55,7 @@ function setup() {
 
 //-----------------------------------------------------------------------------
 function draw() {
-  background("green");
+  background("green"); //background(bg); 
   for (var hole of holes) {
     hole.render();
   }
@@ -138,7 +140,7 @@ class Hole {
 
   render() {
     noStroke();
-    fill(0);
+    fill(255); // COLOR OF HOLEEEEEEEEEEEEEEEEEEEEE
     ellipse(this.x, this.y, Hole.radius * .8, Hole.radius * .8); // MAKES THEM AS CIRCLE
   }
 
