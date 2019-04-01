@@ -71,20 +71,18 @@ function draw() {
         //----balls[15] - LAST BALL
 
 
-			if (balls[1].inHole ) {        // HERE I NEED TO MAKE ONE MORE CONDITION
-				   // if () {
-                                        // IF THE BLACK BALL IS THE LAST ONE THEN U WIN THE GAME
-				    //}                          //location.reload(); // WHEN BLACK BALL IN HOLE, REFRESH PAGE
+			if (balls[11].inHole ) {
+            if (balls[1].inHole & balls[2].inHole & balls[3].inHole & balls[4].inHole & balls[5].inHole & balls[6].inHole & balls[7].inHole & balls[8].inHole & balls[9].inHole & balls[10].inHole & balls[12].inHole & balls[13].inHole & balls[14].inHole & balls[15].inHole) {
+              document.getElementById("notificationText").innerHTML = "U win";
+            } else {
+              document.getElementById("notificationText").innerHTML = "Game is gonna be restarted in awhile";
+              setTimeout(function() {
+                location.reload();
+              }, 5000);
 
-        document.getElementById("notificationText").innerHTML = "Game is gonna be restarted in awhile";
-        setTimeout(function() {
-          location.reload();
-        }, 5000);
-
-				console.log("GAME OVER!!!!!!!!!!!!!!");
-				break; // after BLACK BALL IN HOLE, U CANT PUT OTHER BALL IN HOLES
-
-
+              console.log("GAME OVER!!!!!!!!!!!!!!");
+            break; // after BLACK BALL IN HOLE, U CANT PUT OTHER BALL IN HOLES
+            }
 			}
     }
 
