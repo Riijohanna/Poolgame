@@ -5,4 +5,9 @@ iframe {
   display: block;
   width: 620px;
   height: 400px;
+  border: 0;
+}
+p {
+  border: 0;
+  margin: 0;
 }

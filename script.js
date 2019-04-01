@@ -1,4 +1,6 @@
 
+// add comments where source code was taken and it was changed by me
+
 var ball;
 var balls = [];
 var colors = ["white", "#3333cc", "#f30505", "#3333cc", "#f30505",
@@ -20,7 +22,7 @@ function setup() {
 
 
 
-  cnv.parent('sketch-holder');
+  cnv.parent('sketch-holder'); // PLACE HOLDER FOR CANVAS
   ball = new WhiteBall(width - 100, height / 2, 20, 45);
   balls.push(ball);
 
@@ -74,10 +76,10 @@ function draw() {
                                         // IF THE BLACK BALL IS THE LAST ONE THEN U WIN THE GAME
 				    //}                          //location.reload(); // WHEN BLACK BALL IN HOLE, REFRESH PAGE
 
-        //document.getElementById("status").innerHTML = "U LOST";
+        document.getElementById("notificationText").innerHTML = "Game is gonna be restarted in awhile";
         setTimeout(function() {
           location.reload();
-        }, 3000);
+        }, 5000);
 
 				console.log("GAME OVER!!!!!!!!!!!!!!");
 				break; // after BLACK BALL IN HOLE, U CANT PUT OTHER BALL IN HOLES
