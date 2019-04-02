@@ -1,5 +1,7 @@
 
 // add comments where source code was taken and it was changed by me
+let pic;
+
 let bg;
 var ball;
 var balls = [];
@@ -106,15 +108,20 @@ function draw() {
     ball.update();
     ball.render();
   }
-  stroke(255); //color from mouse to whote ball
+  stroke(255); //color from mouse to white ball
   line(balls[0].position.x, balls[0].position.y, mouseX, mouseY); //white LINE white ball
   stroke(0);
 
 
   translate(balls[0].position.x, balls[0].position.y-4);
   let a = atan2(mouseY- balls[0].position.y, mouseX - balls[0].position.x );
+
   rotate(a);
-  rect(-30, -5, 60, 10);
+
+
+  rect(-30, -5, 60, 10);//TEST
+//image(img, 0, 0);//TEST
+//image(pic, mouseY- balls[0].position.y, mouseX - balls[0].position.x); //TEST
 
 
 }
