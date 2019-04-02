@@ -55,7 +55,7 @@ function setup() {
 
 //-----------------------------------------------------------------------------
 function draw() {
-  background("green"); //background(bg); 
+  background("green"); //background(bg);
   for (var hole of holes) {
     hole.render();
   }
@@ -110,7 +110,13 @@ function draw() {
   line(balls[0].position.x, balls[0].position.y, mouseX, mouseY); //white LINE white ball
   stroke(0);
 
-  line(balls[0].position.x, balls[0].position.y, -mouseX, -mouseY, 10);
+
+  translate(balls[0].position.x, balls[0].position.y-4);
+  let a = atan2(mouseY- balls[0].position.y, mouseX - balls[0].position.x );
+  rotate(a);
+  rect(-30, -5, 60, 10);
+
+
 }
 
 //--------------------------------------------------------------------------
