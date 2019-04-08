@@ -20,7 +20,7 @@ var cnv;
 
 var button;
 function setup() {
-  cnv = createCanvas(600, 350);
+  cnv = createCanvas(700, 400);
 
 
 
@@ -57,6 +57,7 @@ function setup() {
 
 //-----------------------------------------------------------------------------
 function draw() {
+
   background("green"); //background(bg);
   for (var hole of holes) {
     hole.render();
@@ -65,6 +66,19 @@ function draw() {
 
   fill("green");
   rect(width - 100, height / 2, 28, 20);
+
+//---TEST_________------------------
+  let s = '            You lost!';
+  let b = 'Game will be refreshed in 5 seconds.';
+  fill("#fae");
+  textSize(15);
+  text(s, 350, 200, 200, 150);
+  text(b, 350, 220, 200, 150);
+
+
+
+
+
 
 //
   for (var j = 0; j < holes.length; j++) {
@@ -81,9 +95,16 @@ function draw() {
               document.getElementById("notificationText").innerHTML = "U win! Good job! Well DOne!!!!!!11111";
             } else {
               document.getElementById("notificationText").innerHTML = "You lost! Game is gonna be restarted in awhile";
-              setTimeout(function() {
+              //let s = 'You lost! Game is gonna be restarted in awhile';
+              //background("red");
+              fill(0);
+              textSize(30);
+              text('You lost! Game will be refreshed in 5 seconds.', 330, 200);
+              //text(s, 100, 100, 100, 180);
+              textAlign(CENTER);
+              /*setTimeout(function() {
                 location.reload(); //---REFRESH IFRAME PAGE IN % SEC TO PLAY NEW GAME--------------
-              }, 5000);
+              }, 5000);*/
 
 
             break; // after BLACK BALL IN HOLE, U CANT PUT OTHER BALL IN HOLES
