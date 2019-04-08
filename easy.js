@@ -23,12 +23,12 @@ function setup() {
 
 
   cnv.parent('sketch-holder'); // PLACE HOLDER FOR CANVAS
-  ball = new WhiteBall(width - 100, height / 2, 35, 45);  //ball = new WhiteBall(width - 100, height / 2, 20, 45);
+  ball = new WhiteBall(width - 100, height / 2, 20, 45);  //ball = new WhiteBall(width - 100, height / 2, 20, 45); 20 is a radius of white ball
   balls.push(ball);
 
   let offset = 0;
   let c = 0;
-  let ballR = 30; // RADIUS OF BALLS 18
+  let ballR = 20; // RADIUS OF BALLS 18
   //generate balls in triangle
   for (var i = 0; i < 5; i++) { // VERTICAL LINES
     for (var j = 5 - i; j > 0; j--) { //HORIZONTAL LINES
