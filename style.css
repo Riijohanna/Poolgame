@@ -180,9 +180,9 @@ game button:focus {
   outline:none;
 }
 
-h3 {
+#game button h3 {
   color: white;
-  size:20px;
+  size: 20px;
   text-transform: capitalize;
   text-decoration-line: none;
 }
@@ -192,10 +192,18 @@ h3 {
   width: 100%;
   text-decoration-line: none;
 }
-#people div {
-  display: flex;
+.story div{
+  display: inline-block;
 }
-
+#avatar {
+  width: 150px;
+  height: 150px;
+  margin: 300px;
+}
+#aboutus {
+  display: inline-block;
+  margin: 100px;
+}
 /* Medium screens */
 @media all and (min-width: 600px) {
   header>div#logo>div#navToggle {
