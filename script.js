@@ -20,7 +20,7 @@ var cnv;
 
 var button;
 function setup() {
-  cnv = createCanvas(700, 400);
+  cnv = createCanvas(800, 400); //width - 100, height / 2  700, 0, 700, 400
 
 
 
@@ -39,7 +39,7 @@ function setup() {
       let b = new Ball(100 + i * ballR + i, j * ballR - (ballR * 5) / 2 + offset - ballR / 2 + height / 2 + j, ballR, colors[c]); //TRIANGLE. HERE WE LET COLORS GO TO ARRAY
       balls.push(b);
       c++;
-			console.log(balls[11]); //Black COLOR BALL
+			//console.log(balls[11]); //Black COLOR BALL
 
     }
     offset += ballR / 2 + 1;
@@ -57,30 +57,25 @@ function setup() {
 
 //-----------------------------------------------------------------------------
 function draw() {
-
   background("green"); //background(bg);
   for (var hole of holes) {
     hole.render();
   }
   rectMode(CENTER, CENTER);
-
   fill("green");
   rect(width - 100, height / 2, 28, 20);
 
 //---TEST_________------------------
-  let s = '            You lost!';
-  let b = 'Game will be refreshed in 5 seconds.';
-  fill("#fae");
-  textSize(15);
-  text(s, 350, 200, 200, 150);
-  text(b, 350, 220, 200, 150);
 
 
 
 
 
 
-//
+
+
+
+
   for (var j = 0; j < holes.length; j++) {
     for (var i = 0; i < balls.length; i++) {
       let ball = balls[i];
@@ -91,20 +86,29 @@ function draw() {
 
 
 			if (balls[11].inHole ) {
+        let s = '            You lost!';
+        let s1 = '            You won!';
+        let b = 'Game will be refreshed in 5';
+        let c = '              seconds.';
             if (balls[1].inHole & balls[2].inHole & balls[3].inHole & balls[4].inHole & balls[5].inHole & balls[6].inHole & balls[7].inHole & balls[8].inHole & balls[9].inHole & balls[10].inHole & balls[12].inHole & balls[13].inHole & balls[14].inHole & balls[15].inHole) {
               document.getElementById("notificationText").innerHTML = "U win! Good job! Well DOne!!!!!!11111";
+              fill("#fae");
+              textSize(15);
+              text(s1, 430, 200, 200, 150);
+              text(b, 420, 220, 200, 150);
+              text(c, 420, 240, 200, 150);
             } else {
               document.getElementById("notificationText").innerHTML = "You lost! Game is gonna be restarted in awhile";
-              //let s = 'You lost! Game is gonna be restarted in awhile';
-              //background("red");
-              fill(0);
-              textSize(30);
-              text('You lost! Game will be refreshed in 5 seconds.', 330, 200);
-              //text(s, 100, 100, 100, 180);
-              textAlign(CENTER);
-              /*setTimeout(function() {
+
+              fill("#fae");
+              textSize(15);
+              text(s, 430, 200, 200, 150);
+              text(b, 420, 220, 200, 150);
+              text(c, 420, 240, 200, 150);
+
+              setTimeout(function() {
                 location.reload(); //---REFRESH IFRAME PAGE IN % SEC TO PLAY NEW GAME--------------
-              }, 5000);*/
+              }, 5000);
 
 
             break; // after BLACK BALL IN HOLE, U CANT PUT OTHER BALL IN HOLES
@@ -113,6 +117,9 @@ function draw() {
     }
 
   }
+  //TEST--------
+  stroke(0);
+  line(700, 0, 700, 400); //(x1,y1,x2,y2)
 
   for (var ball of balls) {
     if (ball.inHole) continue;
@@ -131,16 +138,21 @@ function draw() {
   }
   stroke(255); //color from mouse to white ball
   line(balls[0].position.x, balls[0].position.y, mouseX, mouseY); //white LINE white ball
-  stroke(0);
 
 
-  translate(balls[0].position.x, balls[0].position.y-4);
+  //TEST---------------------
+
+
+
+
+
+  /*translate(balls[0].position.x, balls[0].position.y-4);
   let a = atan2(mouseY- balls[0].position.y, mouseX - balls[0].position.x );
 
   rotate(a);
 
 
-  rect(-30, -5, 60, 10);//TEST
+  rect(-30, -5, 60, 10);*///TEST
 //image(img, 0, 0);//TEST
 //image(pic, mouseY- balls[0].position.y, mouseX - balls[0].position.x); //TEST
 
