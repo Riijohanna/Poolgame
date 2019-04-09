@@ -193,14 +193,9 @@ game button:focus {
   text-decoration-line: none;
 }
 
-#avatar {
-  width: 150px;
-  height: 150px;
-  margin-top: 300px;
-}
 #aboutus {
   display: inline-block;
-  margin-top: 300px;
+  margin-top: 200px;
   margin-left: 100px;
 }
 #aboutus h1 {
@@ -235,7 +230,16 @@ game button:focus {
   padding: 0px 30px 30px 30px;
 }
 .story {
-  display: flex;
+  display: inline-flex;
+}
+#avatar {
+  width: 150px;
+  height: 150px;
+  margin-top: 200px;
+}
+#avatar img {
+  border-radius: 20px;
+  box-shadow: 0 0 3px black;
 }
 
 /* Medium screens */
