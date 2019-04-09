@@ -1,7 +1,10 @@
+// This is a school project.
+// Inspiration was found after looking at https://codepen.io/axxl/pen/PVxqPv
+// JS code was taken from there and changed
+// We would like to thanks to elmarcia for sharing his code in codepen.io
 
-// add comments where source code was taken and it was changed by me
+
 let pic;
-
 let bg;
 var ball;
 var balls = [];
@@ -11,22 +14,15 @@ var colors = ["#f30505", "#3333cc", "#f30505", "#3333cc", "#f30505",
   "#f30505", "#3333cc",
 ];
 
-
-
-
 var holes = [];
 var cnv;
 
-
 var button;
+
 function setup() {
   cnv = createCanvas(800, 400); //width - 100, height / 2  700, 0, 700, 400
-
-
-
   cnv.parent('sketch-holder'); // PLACE HOLDER FOR CANVAS
-  bg = loadImage('bg.jpg');  // TEST
-
+  bg = loadImage('bg.jpg'); // TEST
   ball = new WhiteBall(width - 100, height / 2, 20, 45); // 20 IS THE RADUIS OF A WHITE BALL
   balls.push(ball);
 
@@ -39,11 +35,9 @@ function setup() {
       let b = new Ball(100 + i * ballR + i, j * ballR - (ballR * 5) / 2 + offset - ballR / 2 + height / 2 + j, ballR, colors[c]); //TRIANGLE. HERE WE LET COLORS GO TO ARRAY
       balls.push(b);
       c++;
-			//console.log(balls[11]); //Black COLOR BALL
-
+      //console.log(balls[11]); //Black COLOR BALL
     }
     offset += ballR / 2 + 1;
-
   }
 
   holes.push(new Hole(0, 0)); //positin up-left hole
@@ -54,7 +48,6 @@ function setup() {
   holes.push(new Hole(width, height)); //down right
 
 }
-
 //-----------------------------------------------------------------------------
 function draw() {
   background("green"); //background(bg);
@@ -65,14 +58,7 @@ function draw() {
   fill("green");
   rect(width - 100, height / 2, 28, 20);
 
-//---TEST_________------------------
-
-
-
-
-
-
-
+  //---TEST_________------------------
 
 
 
@@ -81,49 +67,43 @@ function draw() {
       let ball = balls[i];
       if (ball.inHole) continue;
       ball.checkCollisionWithHole(holes[j]);
-        //----balls[1] - FIRST Ball
-        //----balls[15] - LAST BALL
+      //----balls[1] - FIRST Ball
+      //----balls[15] - LAST BALL
 
-
-			if (balls[11].inHole ) {
+      if (balls[11].inHole) {
         let s = '            You lost!';
         let s1 = '            You won!';
         let b = 'Game will be refreshed in 5';
         let c = '              seconds.';
-            if (balls[1].inHole & balls[2].inHole & balls[3].inHole & balls[4].inHole & balls[5].inHole & balls[6].inHole & balls[7].inHole & balls[8].inHole & balls[9].inHole & balls[10].inHole & balls[12].inHole & balls[13].inHole & balls[14].inHole & balls[15].inHole) {
-              setTimeout(function() {
-              location.reload(); //---REFRESH IFRAME PAGE IN % SEC TO PLAY NEW GAME--------------
-            }, 5000);
-              fill("#fae");
-              textSize(15);
-              text(s1, 430, 200, 200, 150);
-              text(b, 420, 220, 200, 150);
-              text(c, 420, 240, 200, 150);
-            } else {
-                setTimeout(function() {
-                location.reload(); //---REFRESH IFRAME PAGE IN % SEC TO PLAY NEW GAME--------------
-              }, 5000);
-              fill("#fae");
-              textSize(15);
-              text(s, 430, 200, 200, 150);
-              text(b, 420, 220, 200, 150);
-              text(c, 420, 240, 200, 150);
-
-
-            break; // after BLACK BALL IN HOLE, U CANT PUT OTHER BALL IN HOLES
-            }
-			}
+        if (balls[1].inHole & balls[2].inHole & balls[3].inHole & balls[4].inHole & balls[5].inHole & balls[6].inHole & balls[7].inHole & balls[8].inHole & balls[9].inHole & balls[10].inHole & balls[12].inHole & balls[13].inHole & balls[14].inHole & balls[15].inHole) {
+          setTimeout(function() {
+            location.reload(); //---REFRESH IFRAME PAGE IN % SEC TO PLAY NEW GAME--------------
+          }, 5000);
+          fill("#fae");
+          textSize(15);
+          text(s1, 430, 200, 200, 150);
+          text(b, 420, 220, 200, 150);
+          text(c, 420, 240, 200, 150);
+        } else {
+          setTimeout(function() {
+            location.reload(); //---REFRESH IFRAME PAGE IN % SEC TO PLAY NEW GAME--------------
+          }, 5000);
+          fill("#fae");
+          textSize(15);
+          text(s, 430, 200, 200, 150);
+          text(b, 420, 220, 200, 150);
+          text(c, 420, 240, 200, 150);
+          break; // after BLACK BALL IN HOLE, U CANT PUT OTHER BALL IN HOLES
+        }
+      }
     }
-
   }
-  //TEST--------
-  stroke(255);
+  //TEST--------SUCCED-----
+  stroke(255); //White color for line
   line(700, 0, 700, 400); //(x1,y1,x2,y2)
-  stroke(0);
+  stroke(0); //black color of the small rect in canvas
   fill("#414a4c");
-  rect(700, 200, 25, 25, 5);
-
-
+  rect(700, 200, 25, 25, 5); // small rect - start position for white ball
 
   for (var ball of balls) {
     if (ball.inHole) continue;
@@ -142,29 +122,9 @@ function draw() {
   }
   stroke(255); //color from mouse to white ball
   line(balls[0].position.x, balls[0].position.y, mouseX, mouseY); //white LINE white ball
-
-
-  //TEST---------------------
-
-
 }
 
-
-  /*translate(balls[0].position.x, balls[0].position.y-4);
-  let a = atan2(mouseY- balls[0].position.y, mouseX - balls[0].position.x );
-
-  rotate(a);
-
-
-  rect(-30, -5, 60, 10);*///TEST
-//image(img, 0, 0);//TEST
-//image(pic, mouseY- balls[0].position.y, mouseX - balls[0].position.x); //TEST
-
-
-
-
 //--------------------------------------------------------------------------
-
 function mousePressed() {
   if (ball.velocity.mag() > 0.1) return;
   let dx = mouseX - ball.position.x;
@@ -179,7 +139,6 @@ function mousePressed() {
 }
 
 //--------CLASS HOLE------------------------------
-
 class Hole {
   constructor(x, y) {
     this.x = x;
@@ -195,7 +154,6 @@ class Hole {
     fill(255); // COLOR OF HOLEEEEEEEEEEEEEEEEEEEEE
     ellipse(this.x, this.y, Hole.radius * .8, Hole.radius * .8); // MAKES THEM AS CIRCLE
   }
-
 }
 
 
@@ -280,7 +238,6 @@ class Ball extends PhysicsParticle {
       this.inHole = true;
     }
   }
-
 
   render() {
     stroke(0);
