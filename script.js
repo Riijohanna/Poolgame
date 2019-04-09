@@ -32,7 +32,7 @@ function setup() {
 
   let offset = 0;
   let c = 0;
-  let ballR = 18; // RADIUS OF BALLS 18
+  let ballR = 22; // RADIUS OF BALLS 18
   //generate balls in triangle
   for (var i = 0; i < 5; i++) { // VERTICAL LINES
     for (var j = 5 - i; j > 0; j--) { //HORIZONTAL LINES
@@ -91,24 +91,23 @@ function draw() {
         let b = 'Game will be refreshed in 5';
         let c = '              seconds.';
             if (balls[1].inHole & balls[2].inHole & balls[3].inHole & balls[4].inHole & balls[5].inHole & balls[6].inHole & balls[7].inHole & balls[8].inHole & balls[9].inHole & balls[10].inHole & balls[12].inHole & balls[13].inHole & balls[14].inHole & balls[15].inHole) {
-              document.getElementById("notificationText").innerHTML = "U win! Good job! Well DOne!!!!!!11111";
+              setTimeout(function() {
+              location.reload(); //---REFRESH IFRAME PAGE IN % SEC TO PLAY NEW GAME--------------
+            }, 5000);
               fill("#fae");
               textSize(15);
               text(s1, 430, 200, 200, 150);
               text(b, 420, 220, 200, 150);
               text(c, 420, 240, 200, 150);
             } else {
-              document.getElementById("notificationText").innerHTML = "You lost! Game is gonna be restarted in awhile";
-
+                setTimeout(function() {
+                location.reload(); //---REFRESH IFRAME PAGE IN % SEC TO PLAY NEW GAME--------------
+              }, 5000);
               fill("#fae");
               textSize(15);
               text(s, 430, 200, 200, 150);
               text(b, 420, 220, 200, 150);
               text(c, 420, 240, 200, 150);
-
-              setTimeout(function() {
-                location.reload(); //---REFRESH IFRAME PAGE IN % SEC TO PLAY NEW GAME--------------
-              }, 5000);
 
 
             break; // after BLACK BALL IN HOLE, U CANT PUT OTHER BALL IN HOLES
@@ -118,8 +117,13 @@ function draw() {
 
   }
   //TEST--------
-  stroke(0);
+  stroke(255);
   line(700, 0, 700, 400); //(x1,y1,x2,y2)
+  stroke(0);
+  fill("#414a4c");
+  rect(700, 200, 25, 25, 5);
+
+
 
   for (var ball of balls) {
     if (ball.inHole) continue;
@@ -143,7 +147,7 @@ function draw() {
   //TEST---------------------
 
 
-
+}
 
 
   /*translate(balls[0].position.x, balls[0].position.y-4);
@@ -157,14 +161,16 @@ function draw() {
 //image(pic, mouseY- balls[0].position.y, mouseX - balls[0].position.x); //TEST
 
 
-}
+
 
 //--------------------------------------------------------------------------
 
 function mousePressed() {
   if (ball.velocity.mag() > 0.1) return;
   let dx = mouseX - ball.position.x;
+  //let dx = touchesX - ball.position.x; //-TEST--------
   let dy = mouseY - ball.position.y;
+  //let dy = touchesY - ball.position.y;  //---TEST-------------
   let angle = Math.atan2(dy, dx);
   let distance = Math.sqrt(dx * dx + dy * dy) / 10;
   let force = createVector(distance * cos(angle), distance * sin(angle), 0);
@@ -181,7 +187,7 @@ class Hole {
   }
 
   static get radius() {
-    return 50; // RAIDUS OF HOLES 50
+    return 60; // RAIDUS OF HOLES 50
   }
 
   render() {
