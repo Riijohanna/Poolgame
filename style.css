@@ -192,18 +192,52 @@ game button:focus {
   width: 100%;
   text-decoration-line: none;
 }
-.story div{
-  display: inline-block;
-}
+
 #avatar {
   width: 150px;
   height: 150px;
-  margin: 300px;
+  margin-top: 300px;
 }
 #aboutus {
   display: inline-block;
-  margin: 100px;
+  margin-top: 300px;
+  margin-left: 100px;
 }
+#aboutus h1 {
+  padding: 20px;
+  color: white;
+}
+#aboutus p {
+  padding: 20px;
+  color: white;
+  width: 40%;
+}
+.team {
+  display: flex;
+  padding: 30px;
+}
+.team h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+.team li{
+  color: white;
+}
+.team li a{
+  color: white;
+  text-decoration: none;
+}
+
+#rabindra {
+  padding: 0px 30px 30px 30px;
+}
+#riikka {
+  padding: 0px 30px 30px 30px;
+}
+.story {
+  display: flex;
+}
+
 /* Medium screens */
 @media all and (min-width: 600px) {
   header>div#logo>div#navToggle {
