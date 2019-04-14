@@ -18,17 +18,17 @@ var cnv;
 
 var button;
 function setup() {
-  cnv = createCanvas(800, 480);
+  cnv = createCanvas(800, 400);
 
 
 
   cnv.parent('sketch-holder'); // PLACE HOLDER FOR CANVAS
-  ball = new WhiteBall(width - 100, height / 2, 35, 45);  //ball = new WhiteBall(width - 100, height / 2, 20, 45);
+  ball = new WhiteBall(width - 100, height / 2, 25, 45);  //ball = new WhiteBall(width - 100, height / 2, 20, 45);
   balls.push(ball);
 
   let offset = 0;
   let c = 0;
-  let ballR = 30; // RADIUS OF BALLS 18
+  let ballR = 25; // RADIUS OF BALLS 18
   //generate balls in triangle
   for (var i = 0; i < 5; i++) { // VERTICAL LINES
     for (var j = 5 - i; j > 0; j--) { //HORIZONTAL LINES
@@ -133,12 +133,12 @@ class Hole {
   }
 
   static get radius() {
-    return 100; // RAIDUS OF HOLES 50
+    return 80; // RAIDUS OF HOLES 50
   }
 
   render() {
     noStroke();
-    fill(0);
+    fill(255);
     ellipse(this.x, this.y, Hole.radius * .8, Hole.radius * .8); // MAKES THEM AS CIRCLE
   }
 

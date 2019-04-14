@@ -1,5 +1,7 @@
 
 // add comments where source code was taken and it was changed by me
+let pic;
+
 let bg;
 var ball;
 var balls = [];
@@ -18,27 +20,26 @@ var cnv;
 
 var button;
 function setup() {
-  cnv = createCanvas(800, 400);
-
+  cnv = createCanvas(800, 400); //width - 100, height / 2  700, 0, 700, 400
 
 
 
   cnv.parent('sketch-holder'); // PLACE HOLDER FOR CANVAS
   bg = loadImage('bg.jpg');  // TEST
 
-  ball = new WhiteBall(width - 100, height / 2, 24, 45); // 20 IS THE RADUIS OF A WHITE BALL
+  ball = new WhiteBall(width - 100, height / 2, 22, 45); // 20 IS THE RADUIS OF A WHITE BALL
   balls.push(ball);
 
   let offset = 0;
   let c = 0;
-  let ballR = 22 // RADIUS OF BALLS 18
+  let ballR = 22; // RADIUS OF BALLS 18
   //generate balls in triangle
   for (var i = 0; i < 5; i++) { // VERTICAL LINES
     for (var j = 5 - i; j > 0; j--) { //HORIZONTAL LINES
       let b = new Ball(100 + i * ballR + i, j * ballR - (ballR * 5) / 2 + offset - ballR / 2 + height / 2 + j, ballR, colors[c]); //TRIANGLE. HERE WE LET COLORS GO TO ARRAY
       balls.push(b);
       c++;
-			console.log(balls[11]); //Black COLOR BALL
+			//console.log(balls[11]); //Black COLOR BALL
 
     }
     offset += ballR / 2 + 1;
@@ -61,11 +62,20 @@ function draw() {
     hole.render();
   }
   rectMode(CENTER, CENTER);
-
   fill("green");
   rect(width - 100, height / 2, 28, 20);
 
-//
+//---TEST_________------------------
+
+
+
+
+
+
+
+
+
+
   for (var j = 0; j < holes.length; j++) {
     for (var i = 0; i < balls.length; i++) {
       let ball = balls[i];
@@ -76,10 +86,26 @@ function draw() {
 
 
 			if (balls[11].inHole ) {
+        let s = '            You lost!';
+        let s1 = '            You won!';
+        let b = 'Game will be refreshed in 5';
+        let c = '              seconds.';
             if (balls[1].inHole & balls[2].inHole & balls[3].inHole & balls[4].inHole & balls[5].inHole & balls[6].inHole & balls[7].inHole & balls[8].inHole & balls[9].inHole & balls[10].inHole & balls[12].inHole & balls[13].inHole & balls[14].inHole & balls[15].inHole) {
               document.getElementById("notificationText").innerHTML = "U win! Good job! Well DOne!!!!!!11111";
+              fill("#fae");
+              textSize(15);
+              text(s1, 430, 200, 200, 150);
+              text(b, 420, 220, 200, 150);
+              text(c, 420, 240, 200, 150);
             } else {
               document.getElementById("notificationText").innerHTML = "You lost! Game is gonna be restarted in awhile";
+
+              fill("#fae");
+              textSize(15);
+              text(s, 430, 200, 200, 150);
+              text(b, 420, 220, 200, 150);
+              text(c, 420, 240, 200, 150);
+
               setTimeout(function() {
                 location.reload(); //---REFRESH IFRAME PAGE IN % SEC TO PLAY NEW GAME--------------
               }, 5000);
@@ -91,6 +117,12 @@ function draw() {
     }
 
   }
+  //TEST--------
+  stroke(255);
+  line(700, 0, 700, 400); //(x1,y1,x2,y2)
+
+
+
 
   for (var ball of balls) {
     if (ball.inHole) continue;
@@ -107,15 +139,25 @@ function draw() {
     ball.update();
     ball.render();
   }
-  stroke(255); //color from mouse to whote ball
+  stroke(255); //color from mouse to white ball
   line(balls[0].position.x, balls[0].position.y, mouseX, mouseY); //white LINE white ball
-  stroke(0);
 
 
-  translate(balls[0].position.x, balls[0].position.y-4);
+  //TEST---------------------
+
+
+
+
+
+  /*translate(balls[0].position.x, balls[0].position.y-4);
   let a = atan2(mouseY- balls[0].position.y, mouseX - balls[0].position.x );
+
   rotate(a);
-  rect(-30, -5, 60, 10);
+
+
+  rect(-30, -5, 60, 10);*///TEST
+//image(img, 0, 0);//TEST
+//image(pic, mouseY- balls[0].position.y, mouseX - balls[0].position.x); //TEST
 
 
 }
