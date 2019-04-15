@@ -1,11 +1,11 @@
 // This is a school project.
 // Inspiration was found after looking at https://codepen.io/axxl/pen/PVxqPv
-// JS code was taken from there and changed
-// We would like to thanks to elmarcia for sharing his code in codepen.io
+// JS code was taken from there and changed.
+// We would like to thanks to elmarcia for sharing his code in codepen.io.
 
 
 
-let bg;
+//let bg;
 var ball;
 var balls = [];
 var colors = ["#f30505", "#3333cc", "#f30505", "#3333cc", "#f30505",
@@ -17,12 +17,11 @@ var colors = ["#f30505", "#3333cc", "#f30505", "#3333cc", "#f30505",
 var holes = [];
 var cnv;
 
-var button;
 
 function setup() {
   cnv = createCanvas(800, 400); //width - 100, height / 2  700, 0, 700, 400
   cnv.parent('sketch-holder'); // PLACE HOLDER FOR CANVAS
-  bg = loadImage('board.png'); // TEST
+  //bg = loadImage('board.png'); // TEST
   ball = new WhiteBall(width - 100, height / 2, 22, 45); // 20 IS THE RADUIS OF A WHITE BALL
   balls.push(ball);
 
