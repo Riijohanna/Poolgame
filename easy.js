@@ -18,17 +18,17 @@ var cnv;
 
 var button;
 function setup() {
-  cnv = createCanvas(600, 350);
+  cnv = createCanvas(800, 400);
 
 
 
   cnv.parent('sketch-holder'); // PLACE HOLDER FOR CANVAS
-  ball = new WhiteBall(width - 100, height / 2, 20, 45);  //ball = new WhiteBall(width - 100, height / 2, 20, 45); 20 is a radius of white ball
+  ball = new WhiteBall(width - 100, height / 2, 25, 45);  //ball = new WhiteBall(width - 100, height / 2, 20, 45);
   balls.push(ball);
 
   let offset = 0;
   let c = 0;
-  let ballR = 20; // RADIUS OF BALLS 18
+  let ballR = 25; // RADIUS OF BALLS 18
   //generate balls in triangle
   for (var i = 0; i < 5; i++) { // VERTICAL LINES
     for (var j = 5 - i; j > 0; j--) { //HORIZONTAL LINES
@@ -68,23 +68,35 @@ function draw() {
       let ball = balls[i];
       if (ball.inHole) continue;
       ball.checkCollisionWithHole(holes[j]);
-        //----balls[1] - FIRST Ball
-        //----balls[15] - LAST BALL
+      //----balls[1] - FIRST Ball
+      //----balls[15] - LAST BALL
 
-
-			if (balls[11].inHole ) {
-            if (balls[1].inHole & balls[2].inHole & balls[3].inHole & balls[4].inHole & balls[5].inHole & balls[6].inHole & balls[7].inHole & balls[8].inHole & balls[9].inHole & balls[10].inHole & balls[12].inHole & balls[13].inHole & balls[14].inHole & balls[15].inHole) {
-              document.getElementById("notificationText").innerHTML = "U win! Good job! Well DOne!!!!!!11111";
-            } else {
-              document.getElementById("notificationText").innerHTML = "You lost! Game is gonna be restarted in awhile";
-              setTimeout(function() {
-                location.reload(); //---REFRESH IFRAME PAGE IN % SEC TO PLAY NEW GAME--------------
-              }, 5000);
-
-
-            break; // after BLACK BALL IN HOLE, U CANT PUT OTHER BALL IN HOLES
-            }
-			}
+      if (balls[11].inHole) {
+        let s = '            You lost!';
+        let s1 = '            You won!';
+        let b = 'Game will be refreshed in 5';
+        let c = '              seconds.';
+        if (balls[1].inHole & balls[2].inHole & balls[3].inHole & balls[4].inHole & balls[5].inHole & balls[6].inHole & balls[7].inHole & balls[8].inHole & balls[9].inHole & balls[10].inHole & balls[12].inHole & balls[13].inHole & balls[14].inHole & balls[15].inHole) {
+          setTimeout(function() {
+            location.reload(); //---REFRESH IFRAME PAGE IN % SEC TO PLAY NEW GAME--------------
+          }, 5000);
+          fill("#fae"); //CHANGE COLOR
+          textSize(15);
+          text(s1, 430, 200, 200, 150);
+          text(b, 420, 220, 200, 150);
+          text(c, 420, 240, 200, 150);
+        } else {
+          setTimeout(function() {
+            location.reload(); //---REFRESH IFRAME PAGE IN % SEC TO PLAY NEW GAME--------------
+          }, 5000);
+          fill("#fae");
+          textSize(15);
+          text(s, 430, 200, 200, 150);
+          text(b, 420, 220, 200, 150);
+          text(c, 420, 240, 200, 150);
+          break; // after BLACK BALL IN HOLE, U CANT PUT OTHER BALL IN HOLES
+        }
+      }
     }
 
   }
@@ -133,7 +145,7 @@ class Hole {
   }
 
   static get radius() {
-    return 100; // RAIDUS OF HOLES 50
+    return 80; // RAIDUS OF HOLES 50
   }
 
   render() {

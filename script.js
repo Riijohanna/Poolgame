@@ -22,8 +22,8 @@ var button;
 function setup() {
   cnv = createCanvas(800, 400); //width - 100, height / 2  700, 0, 700, 400
   cnv.parent('sketch-holder'); // PLACE HOLDER FOR CANVAS
-  bg = loadImage('bg.jpg'); // TEST
-  ball = new WhiteBall(width - 100, height / 2, 20, 45); // 20 IS THE RADUIS OF A WHITE BALL
+  bg = loadImage('board.png'); // TEST
+  ball = new WhiteBall(width - 100, height / 2, 22, 45); // 20 IS THE RADUIS OF A WHITE BALL
   balls.push(ball);
 
   let offset = 0;
@@ -79,7 +79,7 @@ function draw() {
           setTimeout(function() {
             location.reload(); //---REFRESH IFRAME PAGE IN % SEC TO PLAY NEW GAME--------------
           }, 5000);
-          fill("#fae");
+          fill("#fae"); //CHANGE COLOR
           textSize(15);
           text(s1, 430, 200, 200, 150);
           text(b, 420, 220, 200, 150);
@@ -151,7 +151,7 @@ class Hole {
 
   render() {
     noStroke();
-    fill(255); // COLOR OF HOLEEEEEEEEEEEEEEEEEEEEE
+    fill(0); // COLOR OF HOLEEEEEEEEEEEEEEEEEEEEE
     ellipse(this.x, this.y, Hole.radius * .8, Hole.radius * .8); // MAKES THEM AS CIRCLE
   }
 }
