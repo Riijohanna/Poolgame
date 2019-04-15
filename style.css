@@ -152,13 +152,13 @@ iframe {
   width: 945px;
   height: 545px;
   border: 10px;
+  border-radius: 10px;
   margin: 20px;
   padding: 30px;
   position: fixed;
   /* or absolute */
   top: 30%;
-  left: 30%;
-  /* put later 0 to make it disappear */
+  left: 20%;
 }
 
 #game {
@@ -175,7 +175,7 @@ iframe {
   height: 20%;
   position: absolute;
   top: 40%;
-  /*left: 40%;*/
+  left: 8%;
   width: 10%;
   background: radial-gradient(at 50px 50px, #F30505, #000);
   border: 0;
@@ -184,7 +184,6 @@ iframe {
 game button:focus {
   outline: none;
 }
-
 /*.startButt {
   color: yellow;
   border-bottom-right-radius: yellow;
@@ -192,7 +191,6 @@ game button:focus {
 #game button h3 {
   color: white;
   size: 20px;
-  text-transform: capitalize;
   text-decoration-line: none;
 }
 
