@@ -18,8 +18,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-
-
 header {
   background-color: #fff;
   display: flex;
@@ -151,35 +149,46 @@ header>nav>ul>li>nav>ul>li:hover>a {
 
 iframe {
   display: block;
-  width: 820px;
-  height: 500px;
+  width: 945px;
+  height: 545px;
+  border: 10px;
+  margin: 20px;
+  padding: 30px;
   position: fixed;
   /* or absolute */
   top: 30%;
   left: 30%;
-  border: 1; /* put later 0 to make it disappear */
+  /* put later 0 to make it disappear */
 }
+
 #game {
   background: #090919;
 }
+
 #people {
   background: #3333CC;
 }
+
 #game button {
-border-radius: 50%;
-box-shadow: inset 0px 0px 5px darkgrey;
-height: 20%;
-position: absolute;
-top: 40%;
-left: 40%;
-width: 10%;
-background: radial-gradient(at 50px 50px, #F30505, #000);
-border: 0;
-}
-game button:focus {
-  outline:none;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 5px darkgrey;
+  height: 20%;
+  position: absolute;
+  top: 40%;
+  /*left: 40%;*/
+  width: 10%;
+  background: radial-gradient(at 50px 50px, #F30505, #000);
+  border: 0;
 }
 
+game button:focus {
+  outline: none;
+}
+
+/*.startButt {
+  color: yellow;
+  border-bottom-right-radius: yellow;
+}*/
 #game button h3 {
   color: white;
   size: 20px;
@@ -198,27 +207,33 @@ game button:focus {
   margin-top: 200px;
   margin-left: 100px;
 }
+
 #aboutus h1 {
   padding: 20px;
   color: white;
 }
+
 #aboutus p {
   padding: 20px;
   color: white;
   width: 40%;
 }
+
 .team {
   display: flex;
   padding: 30px;
 }
+
 .team h2 {
   color: white;
   margin-bottom: 20px;
 }
-.team li{
+
+.team li {
   color: white;
 }
-.team li a{
+
+.team li a {
   color: white;
   text-decoration: none;
 }
@@ -226,17 +241,21 @@ game button:focus {
 #rabindra {
   padding: 0px 30px 30px 30px;
 }
+
 #riikka {
   padding: 0px 30px 30px 30px;
 }
+
 .story {
   display: inline-flex;
 }
+
 #avatar {
   width: 150px;
   height: 150px;
   margin-top: 200px;
 }
+
 #avatar img {
   border-radius: 20px;
   box-shadow: 0 0 3px black;
