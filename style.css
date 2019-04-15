@@ -9,7 +9,7 @@ body {
   background: #fff;
   color: #090919;
   -webkit-font-smoothing: antialiased;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: url('LL Circular Std/');
   font-weight: 300;
   font-weight: 400;
   height: auto !important;
