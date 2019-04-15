@@ -102,7 +102,7 @@ function draw() {
   stroke(255); //White color for line
   line(700, 0, 700, 400); //(x1,y1,x2,y2)
   stroke(0); //black color of the small rect in canvas
-  fill("#414a4c");
+  fill(255);
   rect(700, 200, 25, 25, 5); // small rect - start position for white ball
 
   for (var ball of balls) {

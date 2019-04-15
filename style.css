@@ -19,7 +19,7 @@ p {
 }
 
 iframe {
-  /*background-image: url("board.PNG");*/
+  background-image: url("board.PNG");
   width: 825px;
   height: 425px;
   border: 10px;
