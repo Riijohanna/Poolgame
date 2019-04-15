@@ -9,7 +9,7 @@ body {
   background: #fff;
   color: #090919;
   -webkit-font-smoothing: antialiased;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
   font-weight: 400;
   height: auto !important;
@@ -29,7 +29,7 @@ header>div#logo {
   background-image: url('icons/logo.svg');
   height: 40px;
   width: 149px;
-  margin-top: 1.5em;
+  margin-top: 2,5em;
   align-items: center;
   background-position: center;
   background-repeat: no-repeat;
@@ -145,6 +145,46 @@ header>nav>ul>li>nav>ul>li>a {
 header>nav>ul>li>nav>ul>li:hover>a {
   background-color: #3333CC;
   color: #fff;
+}
+.navtext {
+    color: #DCDFEE;
+}
+
+nav li {
+    display: inline-block;
+    padding: 10px;
+    margin-left: 23px;
+    padding-top: 30px;
+    position: relative;
+}
+
+
+nav a {
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav a:hover {
+    color: #3202F4;
+}
+
+nav a::before {
+    content: '';
+    display: block;
+    height: 6px;
+    background-image: linear-gradient(-90deg, #FFFFFF 0%, #F30505 50%, #F30505 100%);
+    border-radius: 2px 40% 40% 2px;
+
+    position: absolute;
+    top: 0;
+    width: 0%;
+
+    transition: all ease-in-out 372ms;
+
+}
+
+nav a:hover::before{
+    width: 80%;
 }
 
 iframe {
