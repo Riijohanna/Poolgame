@@ -150,10 +150,13 @@ header>nav>ul>li>nav>ul>li:hover>a {
 }
 
 iframe {
-  background-color: green;
+  background-image: url("board.PNG");
   display: block;
-  width: 820px;
-  height: 500px;
+  width: 825px;
+  height: 425px;
+  border: 10px;
+  margin: 20px;
+  padding: 30px;
   position: fixed;
   /* or absolute */
   top: 30%;
