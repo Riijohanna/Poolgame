@@ -152,8 +152,8 @@ header>nav>ul>li>nav>ul>li:hover>a {
 iframe {
   background-image: url("board.PNG");
   display: block;
-  width: 825px;
-  height: 425px;
+  width: 880px;
+  height: 465px;
   border: 10px;
   margin: 20px;
   padding: 30px;
@@ -161,8 +161,9 @@ iframe {
   /* or absolute */
   top: 30%;
   left: 30%;
-  border: 1; /* put later 0 to make it disappear */
+   /* put later 0 to make it disappear */
 }
+
 #game {
   background: #090919;
 }
