@@ -4,7 +4,7 @@
 // We would like to thanks to elmarcia for sharing his code in codepen.io
 
 
-let pic;
+
 let bg;
 var ball;
 var balls = [];
