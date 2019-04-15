@@ -150,6 +150,7 @@ header>nav>ul>li>nav>ul>li:hover>a {
 }
 
 iframe {
+  background-color: green;
   display: block;
   width: 820px;
   height: 500px;
@@ -171,7 +172,7 @@ box-shadow: inset 0px 0px 5px darkgrey;
 height: 20%;
 position: absolute;
 top: 40%;
-left: 40%;
+/*left: 40%;*/
 width: 10%;
 background: radial-gradient(at 50px 50px, #F30505, #000);
 border: 0;
@@ -179,7 +180,10 @@ border: 0;
 game button:focus {
   outline:none;
 }
-
+/*.startButt {
+  color: yellow;
+  border-bottom-right-radius: yellow;
+}*/
 #game button h3 {
   color: white;
   size: 20px;
