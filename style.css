@@ -27,9 +27,9 @@ header {
 
 header>div#logo {
   background-image: url('icons/logo.svg');
-  height: 40px;
-  width: 149px;
-  margin-top: 2,5em;
+  height: 100px;
+  width: 189px;
+  margin-top: 0,5em;
   align-items: center;
   background-position: center;
   background-repeat: no-repeat;
@@ -95,6 +95,7 @@ header nav>ul>li {
 
 header nav>ul>li:last-of-type {
   border-bottom: none;
+  visibility: hidden;
 }
 
 header nav>ul>li>a {
@@ -203,17 +204,20 @@ iframe {
 
 #game {
   background: #090919;
+  margin: 0 auto;
 }
 
 #people {
   background: #3333CC;
+  margin: 0 auto;
 }
 
 #game button {
+  display: block;
   border-radius: 50%;
   box-shadow: inset 0px 0px 5px darkgrey;
   height: 20%;
-  position: absolute;
+  position: fixed;
   top: 40%;
   left: 8%;
   width: 10%;
