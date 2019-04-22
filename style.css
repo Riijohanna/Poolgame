@@ -15,6 +15,7 @@ body {
   height: auto !important;
   height: 100%;
   min-height: 100%;
+  width: 100%;
   text-rendering: optimizeLegibility;
 }
 
@@ -29,7 +30,7 @@ header>div#logo {
   background-image: url('icons/logo.svg');
   height: 100px;
   width: 189px;
-  margin-top: 0,5em;
+  margin-top: 0, 5em;
   align-items: center;
   background-position: center;
   background-repeat: no-repeat;
@@ -147,45 +148,41 @@ header>nav>ul>li>nav>ul>li:hover>a {
   background-color: #3333CC;
   color: #fff;
 }
+
 .navtext {
-    color: #DCDFEE;
+  color: #DCDFEE;
 }
 
 nav li {
-    display: inline-block;
-    padding: 10px;
-    margin-left: 23px;
-    padding-top: 30px;
-    position: relative;
+  display: inline-block;
+  margin-left: 23px;
+  margin-top: 30px;
+  position: relative;
 }
 
-
 nav a {
-    text-decoration: none;
-    font-size: 1.2rem;
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
 nav a:hover {
-    color: #3202F4;
+  color: #3202F4;
 }
 
 nav a::before {
-    content: '';
-    display: block;
-    height: 6px;
-    background-image: linear-gradient(-90deg, #FFFFFF 0%, #F30505 50%, #F30505 100%);
-    border-radius: 2px 40% 40% 2px;
-
-    position: absolute;
-    top: 0;
-    width: 0%;
-
-    transition: all ease-in-out 372ms;
-
+  content: '';
+  display: block;
+  height: 6px;
+  background-image: linear-gradient(-90deg, #FFFFFF 0%, #F30505 50%, #F30505 100%);
+  border-radius: 2px 40% 40% 2px;
+  position: absolute;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 372ms;
 }
 
-nav a:hover::before{
-    width: 80%;
+nav a:hover::before {
+  width: 65%;
 }
 
 iframe {
@@ -194,11 +191,11 @@ iframe {
   height: 545px;
   border: 10px;
   border-radius: 10px;
-  margin: 20px;
-  padding: 30px;
+  margin: 20px 20px;
+  padding: 30px 30px;
   position: fixed;
   /* or absolute */
-  top: 30%;
+  top: 15%;
   left: 20%;
 }
 
@@ -218,7 +215,7 @@ iframe {
   box-shadow: inset 0px 0px 5px darkgrey;
   height: 20%;
   position: fixed;
-  top: 40%;
+  top: 50%;
   left: 8%;
   width: 10%;
   background: radial-gradient(at 50px 50px, #F30505, #000);
@@ -228,6 +225,7 @@ iframe {
 game button:focus {
   outline: none;
 }
+
 /*.startButt {
   color: yellow;
   border-bottom-right-radius: yellow;
@@ -244,31 +242,34 @@ game button:focus {
   text-decoration-line: none;
 }
 
+main {
+  background: url('bg.svg');
+  height: 657px;
+}
+
 #aboutus {
   display: inline-block;
-  margin-top: 200px;
-  margin-left: 100px;
+  margin-top: 140px;
+  margin-left: 30%;
 }
 
 #aboutus h1 {
+  text-align: center;
   padding: 20px;
   color: white;
+  font-size: 40px;
 }
 
 #aboutus p {
-  padding: 20px;
+  text-align: center;
   color: white;
-  width: 40%;
+  font-size: 18px;
 }
 
 .team {
   display: flex;
-  padding: 30px;
-}
-
-.team h2 {
-  color: white;
-  margin-bottom: 20px;
+  text-align: center;
+  padding: 10px;
 }
 
 .team li {
@@ -280,19 +281,145 @@ game button:focus {
   text-decoration: none;
 }
 
+#riikka {
+  background-image: url("avatar2.svg");
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  margin-top: 0;
+  margin-left: 120px;
+  transition: .5s;
+  text-align: center;
+}
+
+#riikka h2 {
+  color: #ffffff;
+}
+
+.text h3 {
+  color: #ffffff;
+  padding: 20px;
+  font-size: 25px;
+}
+
+.text p {
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+#rost {
+  background-image: url("avatar1.svg");
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+  background-color: white;
+  margin-top: 50px;
+  margin-left: 160px;
+  transition: .5s;
+  text-align: center;
+}
+
+#rost h2 {
+  color: #ffffff;
+}
+
 #rabindra {
-  padding: 0px 30px 30px 30px;
+  background-image: url("avatar1.svg");
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+  background-color: white;
+  margin-top: 50px;
+  margin-left: 160px;
+  transition: .5s;
+  text-align: center;
+}
+
+#rabindra h2 {
+  color: #ffffff;
+}
+
+#irik {
+  background-image: url("avatar1.svg");
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+  background-color: white;
+  margin-top: 0;
+  margin-left: 160px;
+  transition: .5s;
+  text-align: center;
+}
+
+#irik h2 {
+  color: #ffffff;
+  padding-top: 20px;
+}
+
+.text {
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#riikka:hover {
+  border-radius: 10px;
+  background-color: #090919;
+}
+
+#riikka:hover .text {
+  opacity: 1;
 }
 
 #riikka {
   padding: 0px 30px 30px 30px;
 }
 
-.story {
-  display: inline-flex;
+#rost:hover {
+  border-radius: 10px;
+  background-color: #090919;
+}
+
+#rost:hover .text {
+  opacity: 1;
+}
+
+#rost {
+  padding: 0px 30px 30px 30px;
+}
+
+#rabindra:hover {
+  border-radius: 10px;
+  background-color: #090919;
+}
+
+#rabindra:hover .text {
+  opacity: 1;
+}
+
+#rabindra {
+  padding: 0px 30px 30px 30px;
+}
+
+#irik:hover {
+  border-radius: 10px;
+  background-color: #090919;
+}
+
+#irik:hover .text {
+  opacity: 1;
+}
+
+#irik {
+  padding: 0px 30px 30px 30px;
 }
 
 #avatar {
+  display: inline-block;
   width: 150px;
   height: 150px;
   margin-top: 200px;
@@ -386,6 +513,7 @@ game button:focus {
 .playgridio {
   color: #3333CC;
 }
+
 .homenav {
   color: #F30505;
 }
