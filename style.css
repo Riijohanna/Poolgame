@@ -155,9 +155,8 @@ header>nav>ul>li>nav>ul>li:hover>a {
 
 nav li {
   display: inline-block;
-  padding: 10px;
   margin-left: 23px;
-  padding-top: 30px;
+  margin-top: 30px;
   position: relative;
 }
 
@@ -183,7 +182,7 @@ nav a::before {
 }
 
 nav a:hover::before {
-  width: 80%;
+  width: 65%;
 }
 
 iframe {
@@ -245,7 +244,7 @@ game button:focus {
 
 main {
   background: url('bg.svg');
-  height: 750px;
+  height: 657px;
 }
 
 #aboutus {
@@ -264,14 +263,22 @@ main {
 #aboutus p {
   text-align: center;
   color: white;
-  padding: 5px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .team {
   display: flex;
   text-align: center;
   padding: 10px;
+}
+
+.team li {
+  color: white;
+}
+
+.team li a {
+  color: white;
+  text-decoration: none;
 }
 
 #riikka {
@@ -308,7 +315,7 @@ main {
   width: 150px;
   border-radius: 10px;
   background-color: white;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-left: 160px;
   transition: .5s;
   text-align: center;
@@ -324,7 +331,7 @@ main {
   width: 150px;
   border-radius: 10px;
   background-color: white;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-left: 160px;
   transition: .5s;
   text-align: center;
