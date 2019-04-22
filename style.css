@@ -245,6 +245,7 @@ game button:focus {
 main {
   background: url('bg.svg');
   height: 657px;
+   min-height: 56vw;
 }
 
 #aboutus {
