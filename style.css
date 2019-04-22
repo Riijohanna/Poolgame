@@ -14,7 +14,7 @@ body {
   font-weight: 400;
   height: auto !important;
   height: 100%;
-  min-height: 100%;
+  
   width: 100%;
   text-rendering: optimizeLegibility;
 }
@@ -244,14 +244,17 @@ game button:focus {
 
 main {
   background: url('bg.svg');
-  height: 657px;
-   min-height: 56vw;
+   height: 56vw;
 }
 
 #aboutus {
   display: inline-block;
   margin-top: 140px;
-  margin-left: 30%;
+  /*margin-left: 30%;*/
+  position: fixed;
+  top: 8%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
 #aboutus h1 {
@@ -270,7 +273,12 @@ main {
 .team {
   display: flex;
   text-align: center;
+  position: fixed;
+
   padding: 10px;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
 .team li {
@@ -281,6 +289,9 @@ main {
   color: white;
   text-decoration: none;
 }
+
+
+
 
 #riikka {
   background-image: url("avatar2.svg");
